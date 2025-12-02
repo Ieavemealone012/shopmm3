@@ -1,10 +1,10 @@
-{"id":"91427","variant":"standard","title":"GitHub Pages Merch Store Starter"}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop Massacre Misery 3 Merch</title>
+  <title>Shop MM3 Merch</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
     header { background:#222; color:#fff; padding:20px; text-align:center; }
@@ -19,45 +19,131 @@
     .btn { display:inline-block; margin-top:10px; padding:10px 15px; background:#0077ff; color:#fff; border:none; border-radius:5px; cursor:pointer; text-decoration:none; }
     .btn:hover { background:#005fcc; }
     footer { text-align:center; padding:20px; background:#222; color:#fff; margin-top:40px; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .product {
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .btn:hover {
+    background: #005fcc;
+    box-shadow: 0 0 10px #0077ff;
+    transition: box-shadow 0.3s ease;
+  }
+
+  @media (max-width: 600px) {
+    .product {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      display: block;
+      margin: 10px 0;
+    }
+  }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Shop MM3 Merch</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Products</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+<header style="position: relative; background-color: rgb(12, 12, 12); color: white; text-align: center; padding: 20px 40px;">
+  <img src="headerlogo2.png" alt="MM3 Logo" class="logo"
+       style="position: absolute; top: 10px; right: 40px; width: 80px; height: auto;">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+<h1 style="font-family: 'Orbitron', sans-serif; font-size: 2.5em; margin: 0; 
+color: white; text-shadow: 2px 2px 5px red;">Shop MM3 Merch</h1>
+<nav style="margin-top:15px;">
+  <a href="#" 
+     style="display:inline-block; padding:8px 15px; margin:0 8px; 
+            background:#7a0707; color:#fff; text-decoration:none; 
+            border-radius:20px; font-weight:bold; 
+            transition:background 0.3s ease;"
+     onmouseover="this.style.background='#f10f0f'" 
+     onmouseout="this.style.background='#7a0707'">Home</a>
 
-  <div class="container">
-    <h2>Our Products</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://cdn.discordapp.com/attachments/1433284079125659709/1445238787021209781/chester.png?ex=692f9f02&is=692e4d82&hm=ced5db97b1160e78a96e670d15bccf6ac178c9fd7a323f3492806f97f53eb7e9" alt="T-Shirt">
-        <h3>Game T-Shirt</h3>
-        <p>$20.00</p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x200?text=Hoodie" alt="Hoodie">
-        <h3>Game Hoodie</h3>
-        <p>$35.00</p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x200?text=Cap" alt="Cap">
-        <h3>Game Cap</h3>
-        <p>$15.00</p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
-    </div>
-  </div>
+  <a href="#" 
+     style="display:inline-block; padding:8px 15px; margin:0 8px; 
+            background:#7a0707; color:#fff; text-decoration:none; 
+            border-radius:20px; font-weight:bold; 
+            transition:background 0.3s ease;"
+     onmouseover="this.style.background='#f10f0f'" 
+     onmouseout="this.style.background='#7a0707'">Products</a>
+
+  <a href="#" 
+     style="display:inline-block; padding:8px 15px; margin:0 8px; 
+            background:#7a0707; color:#fff; text-decoration:none; 
+            border-radius:20px; font-weight:bold; 
+            transition:background 0.3s ease;"
+     onmouseover="this.style.background='#f10f0f'" 
+     onmouseout="this.style.background='#7a0707'">About</a>
+
+  <a href="#" 
+     style="display:inline-block; padding:8px 15px; margin:0 8px; 
+            background:#7a0707; color:#fff; text-decoration:none; 
+            border-radius:20px; font-weight:bold; 
+            transition:background 0.3s ease;"
+     onmouseover="this.style.background='#f10f0f'" 
+     onmouseout="this.style.background='#7a0707'">Contact</a>
+</nav>
+</header>
+
+<div style="text-align:center; margin:40px 0; font-family: 'Roboto', sans-serif;">
+  <h2 style="font-family: 'Orbitron', sans-serif;">Get Exclusive MM3 Drops</h2>
+  <p style="color:#444;">Enter your email to be the first to know about new releases and special deals.</p>
+  
+  <input type="email" id="emailInput" placeholder="you@example.com" style="padding:10px 15px; width:250px; border-radius:25px; border:1px solid #ccc; font-size:5; font-family:'Roboto', sans-serif;">
+  
+  <button class="btn" onclick="showThanks()" style="margin-left:10px;">Notify Me</button>
+  
+  <p id="thanksMessage" style="margin-top:15px; color:green; font-weight:bold; display:none;">
+    ✅ Thanks for signing up!
+  </p>
+</div>
+
+<style>
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+</style>
+
+<script>
+  function showThanks() {
+    const email = document.getElementById('emailInput').value;
+    const msg = document.getElementById('thanksMessage');
+    if (email.trim() !== "") {
+      msg.style.display = 'block';
+      msg.style.opacity = '1';
+      // After 10 seconds, fade out
+      setTimeout(() => {
+        msg.style.animation = 'fadeOut 2s forwards';
+      }, 10000);
+    }
+  }
+</script>
+
+<script>
+  function showThanks() {
+    const email = document.getElementById('emailInput').value;
+    if (email.trim() !== "") {
+      document.getElementById('thanksMessage').style.display = 'block';
+    }
+  }
+</script>
+
+<div class="featured-product" style="background:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); max-width:400px; margin:40px auto; padding:20px; text-align:center; font-family: 'Roboto', sans-serif;">
+  <img src="https://files.tapstitch.com/hugepod/material/custom_printing/1fec6128056e4ff79b14fa80a4c0a950.png?x-oss-process=style/hugepod-product-webp" alt="MM3 Hoodie" style="width:100%; border-radius:8px;">
+  <h3 style="margin:15px 0 5px; font-family: 'Orbitron', sans-serif;">🔥 Featured: MM3 Hoodie</h3>
+  <p style="margin:5px 0; color:#555; font-family: 'Impact', sans-serif;">$25.00</p>
+  <p style="margin:10px 0; color:#333; font-style: italic; font-family: 'Roboto', sans-serif;">Stay warm and stylish with the official MM3 Hoodie, Crafted for comfort and designed to dominate.</p>
+  <a href="#" class="btn">Buy Now</a>
+</div>
 
   <footer>
-    &copy; ©2025 MM3 Corporation. All Rights Reserved.
+    &copy; 2025 MM3 Corporation. All Rights Reserved.
   </footer>
 </body>
 </html>;
