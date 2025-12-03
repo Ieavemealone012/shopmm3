@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details - MM3</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin:0; padding:0;
+    background:#f4f4f4;
+  }
+
+  header {
+    background-color:rgb(12,12,12);
+    color:white;
+    text-align:center;
+    padding:20px 40px;
+    position:relative;
+  }
+
+  header h1 {
+    margin:0;
+    font-family:'Orbitron', sans-serif;
+    font-size:2.5em;
+    text-shadow:2px 2px 5px red;
+  }
+
+  nav a {
+    display:inline-block;
+    padding:8px 15px;
+    margin:0 8px;
+    background:#7a0707;
+    color:#fff;
+    text-decoration:none;
+    border-radius:20px;
+    font-weight:bold;
+    transition:background .3s ease;
+  }
+  nav a:hover { background:#f10f0f; }
+
+  .logo {
+    position:absolute;
+    top:10px;
+    right:40px;
+    width:80px;
+  }
+
+  .container {
+    max-width:900px;
+    margin:40px auto;
+    background:white;
+    border-radius:10px;
+    padding:30px;
+    box-shadow:0 0 12px rgba(0,0,0,0.12);
+  }
+
+  .product-view {
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    align-items:flex-start;
+  }
+
+  .product-view img {
+    width:320px;
+    border-radius:10px;
+  }
+
+  .details h2 {
+    margin-top:0;
+    font-family:'Orbitron', sans-serif;
+  }
+
+  .price {
+    font-size:24px;
+    font-weight:bold;
+    margin:10px 0;
+  }
+
+  .btn {
+    padding:12px 20px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:17px;
+    transition:0.3s;
+  }
+  .btn:hover {
+    background:#005fcc;
+    box-shadow:0 0 12px #0077ff;
+  }
+
+  footer {
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+    margin-top:50px;
+  }
+
+  .error {
+    text-align:center;
+    font-size:22px;
+    padding:60px 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="headerlogo2.png" class="logo" alt="MM3 Logo">
+  <h1>Product Details</h1>
+
+  <nav style="margin-top:15px;">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<div class="container" id="productContainer">
+  <!-- Content is loaded through JS -->
+</div>
+
+<footer>
+  &copy; 2025 MM3 Corporation. All Rights Reserved.
+</footer>
+
+<script src="products.js"></script>
+
+<script>
+// Parse product ID from URL
+const urlParams = new URLSearchParams(window.location.search);
+const productID = urlParams.get("id");
+
+// Find product in database
+const product = PRODUCTS.find(p => p.id === productID);
+
+// Load cart helpers
+function loadCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+const container = document.getElementById("productContainer");
+
+// If invalid product
+if (!product) {
+  container.innerHTML = `
+    <p class="error">Product not found.<br><br>
+    <a href="products.html" class="btn">Back to Products</a>
+    </p>
+  `;
+} else {
+  container.innerHTML = `
+    <div class="product-view">
+      <img src="${product.img}" alt="${product.name}">
+      <div class="details">
+        <h2>${product.name}</h2>
+        <p class="price">$${product.price.toFixed(2)}</p>
+        <p>${product.desc}</p>
+
+        <button class="btn" id="addToCartBtn">Add to Cart</button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("addToCartBtn").addEventListener("click", () => {
+    let cart = loadCart();
+    const existing = cart.find(item => item.id === product.id);
+
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        img: product.img,
+        quantity: 1
+      });
+    }
+
+    saveCart(cart);
+    alert("Added to cart!");
+  });
+}
+</script>
+
+</body>
+</html>

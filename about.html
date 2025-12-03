@@ -96,59 +96,62 @@ color: white; text-shadow: 2px 2px 5px red;">Shop MM3 Merch</h1>
      onmouseover="this.style.background='#f10f0f'" 
      onmouseout="this.style.background='#7a0707'">Cart</a>
 </nav>
-
 </header>
 
-<div style="text-align:center; margin:40px 0; font-family: 'Roboto', sans-serif;">
-  <h2 style="font-family: 'Orbitron', sans-serif;">Get Exclusive MM3 Drops</h2>
-  <p style="color:#444;">Enter your email to be the first to know about new releases and special deals.</p>
-  
-  <input type="email" id="emailInput" placeholder="you@example.com" style="padding:10px 15px; width:250px; border-radius:25px; border:1px solid #ccc; font-size:5; font-family:'Roboto', sans-serif;">
-  
-  <button class="btn" onclick="showThanks()" style="margin-left:10px;">Notify Me</button>
-  
-  <p id="thanksMessage" style="margin-top:15px; color:green; font-weight:bold; display:none;">
-    ✅ Thanks for signing up!
+<div class="about-container" style="
+  max-width:900px;
+  margin:40px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease forwards;
+  opacity:0;
+">
+
+  <h2 style="
+    font-family:'Orbitron', sans-serif;
+    text-align:center;
+    margin-bottom:10px;
+    font-size:2em;
+  ">About MM3</h2>
+
+  <p style="text-align:center; color:#444; max-width:750px; margin:0 auto 20px;">
+    MM3 Merch is the official store connected to the MM3 Roblox game and its development studio.  
+    Everything here is created for fans, players, and supporters who want to own something tied directly to the project.
   </p>
-</div>
 
-<style>
-  @keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
-</style>
+  <hr style="border:0; border-top:1px solid #ddd; margin:25px 0;">
 
-<script>
-  function showThanks() {
-    const email = document.getElementById('emailInput').value;
-    const msg = document.getElementById('thanksMessage');
-    if (email.trim() !== "") {
-      msg.style.display = 'block';
-      msg.style.opacity = '1';
-      // After 10 seconds, fade out
-      setTimeout(() => {
-        msg.style.animation = 'fadeOut 2s forwards';
-      }, 10000);
-    }
-  }
-</script>
+  <h3 style="font-family:'Orbitron', sans-serif; margin-top:25px;">What is MM3?</h3>
+  <p style="color:#555; line-height:1.6;">
+  MM3 was created and founded by Leaf — known on Roblox as 
+  <a href="https://www.roblox.com/users/1971231464/profile" target="_blank" style="color:#0077ff; text-decoration:none;">
+    leavemealone012
+  </a> — back in March 2021.  
+  The game, brand, and merch store are all part of the same project built from the ground up by the developer! The merch stores exists as an extension of that world, A place where players can support the game and get something cool in return!
+</p>
 
-<script>
-  function showThanks() {
-    const email = document.getElementById('emailInput').value;
-    if (email.trim() !== "") {
-      document.getElementById('thanksMessage').style.display = 'block';
-    }
-  }
-</script>
+  <h3 style="font-family:'Orbitron', sans-serif; margin-top:25px;">Why This Store Exists</h3>
+  <p style="color:#555; line-height:1.6;">
+    Instead of using random third-party sellers or low-quality providers, this store was made to give players a safe, official place
+    to buy items related to the MM3 universe.  
+    Everything here is created, approved, and released directly by the studio.
+  </p>
 
-<div class="featured-product" style="background:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); max-width:400px; margin:40px auto; padding:20px; text-align:center; font-family: 'Roboto', sans-serif;">
-  <img src="https://files.tapstitch.com/hugepod/material/custom_printing/1fec6128056e4ff79b14fa80a4c0a950.png?x-oss-process=style/hugepod-product-webp" alt="MM3 Hoodie" style="width:100%; border-radius:8px;">
-  <h3 style="margin:15px 0 5px; font-family: 'Orbitron', sans-serif;">🔥 Featured: MM3 Hoodie</h3>
-  <p style="margin:5px 0; color:#555; font-family: 'Impact', sans-serif;">$25.00</p>
-  <p style="margin:10px 0; color:#333; font-style: italic; font-family: 'Roboto', sans-serif;">Stay warm and stylish with the official MM3 Hoodie, Crafted for comfort and designed to dominate.</p>
-  <a href="#" class="btn">Buy Now</a>
+  <h3 style="font-family:'Orbitron', sans-serif; margin-top:25px;">Created by the Developer</h3>
+  <p style="color:#555; line-height:1.6;">
+    Every product in the store is personally handled by the developer behind MM3 - from design, to quality checks, to distribution.  
+    No outside companies, no generic templates, no mass-produced junk.  
+    Just authentic stuff connected to the game and its community!
+  </p>
+
+  <h3 style="font-family:'Orbitron', sans-serif; margin-top:25px;">Have Questions?</h3>
+  <p style="color:#555; line-height:1.6;">
+    If you need help with an order, have feedback, or want to ask something about the shop, head over to the  
+    <a href="contact.html" style="color:#0077ff; text-decoration:none;">contact page</a>.  
+    Support for the game itself should still go through the usual Discord channels or in-game feedback system! — this form is only for store-related stuff.
+  </p>
 </div>
 
   <footer>

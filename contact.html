@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - MM3</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
+    header { background:#222; color:#fff; padding:20px; text-align:center; position:relative; }
+    header h1 { margin:0; font-family: 'Orbitron', sans-serif; font-size:2.5em; color:white; text-shadow:2px 2px 5px red; }
+    nav a { 
+      color:#fff; margin:0 8px; padding:8px 15px; text-decoration:none; 
+      font-weight:bold; border-radius:20px; background:#7a0707; 
+      transition:background .3s ease;
+      display:inline-block;
+    }
+    nav a:hover { background:#f10f0f; }
+    .logo {
+      position:absolute; top:10px; right:40px; width:80px; height:auto;
+    }
+
+    .container {
+      max-width:700px;
+      background:#fff;
+      margin:40px auto;
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease forwards;
+      opacity:0;
+    }
+
+    h2 {
+      font-family:'Orbitron', sans-serif;
+      text-align:center;
+      margin-bottom:10px;
+    }
+
+    label {
+      font-weight:bold;
+      display:block;
+      margin-top:20px;
+    }
+
+    input, textarea {
+      width:100%;
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:6px;
+      margin-top:5px;
+      font-size:16px;
+    }
+
+    textarea { height:130px; }
+
+    button {
+      margin-top:20px;
+      width:100%;
+      padding:12px;
+      background:#0077ff;
+      color:#fff;
+      border:none;
+      border-radius:6px;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover {
+      background:#005fcc;
+      box-shadow:0 0 10px #0077ff;
+    }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      background:#222; 
+      color:#fff; 
+      margin-top:50px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header style="background-color:rgb(12,12,12);">
+  <img src="headerlogo2.png" class="logo" alt="MM3 Logo">
+  <h1>Contact MM3</h1>
+  <nav style="margin-top:15px;">
+  <a href="index.html"
+     style="display:inline-block; padding:8px 15px; margin:0 8px; 
+            background:#7a0707; color:#fff; text-decoration:none; 
+            border-radius:20px; font-weight:bold; 
+            transition:background 0.3s ease;"
+     onmouseover="this.style.background='#f10f0f'" 
+     onmouseout="this.style.background='#7a0707'">Home</a>
+
+  <a href="products.html"
+     style="display:inline-block; padding:8px 15px; margin:0 8px; 
+            background:#7a0707; color:#fff; text-decoration:none; 
+            border-radius:20px; font-weight:bold; 
+            transition:background 0.3s ease;"
+     onmouseover="this.style.background='#f10f0f'" 
+     onmouseout="this.style.background='#7a0707'">Products</a>
+
+  <a href="about.html"
+     style="display:inline-block; padding:8px 15px; margin:0 8px; 
+            background:#7a0707; color:#fff; text-decoration:none; 
+            border-radius:20px; font-weight:bold; 
+            transition:background 0.3s ease;"
+     onmouseover="this.style.background='#f10f0f'" 
+     onmouseout="this.style.background='#7a0707'">About</a>
+
+  <a href="contact.html"
+     style="display:inline-block; padding:8px 15px; margin:0 8px; 
+            background:#7a0707; color:#fff; text-decoration:none; 
+            border-radius:20px; font-weight:bold; 
+            transition:background 0.3s ease;"
+     onmouseover="this.style.background='#f10f0f'" 
+     onmouseout="this.style.background='#7a0707'">Contact</a>
+
+  <a href="cart.html"
+     style="display:inline-block; padding:8px 15px; margin:0 8px; 
+            background:#7a0707; color:#fff; text-decoration:none; 
+            border-radius:20px; font-weight:bold; 
+            transition:background 0.3s ease;"
+     onmouseover="this.style.background='#f10f0f'" 
+     onmouseout="this.style.background='#7a0707'">Cart</a>
+</nav>
+</header>
+
+<div class="container">
+  <h2>Get In Touch</h2>
+  <p style="text-align:center;color:#444;">If you have a problem with your order, have feedback about the store or products, or have a question about anything, this is the place to type it out
+
+Please note that this form is not for anything about the game itself or the Studio, just for matters pertaining to the store. Any forms that have nothing to the store will not be answered. </p>
+
+  <!-- Use Formspree or your backend -->
+<form action="https://formspree.io/f/xgvgypoq" method="POST" id="contactForm">
+
+  <!-- First Name -->
+  <label>First Name *</label>
+  <input type="text" name="first_name" required>
+  <small style="color:#666;">Enter your first name so we know who we're speaking with.</small>
+
+  <!-- Last Name (optional) -->
+  <label style="margin-top:20px;">Last Name (Optional)</label>
+  <input type="text" name="last_name">
+  <small style="color:#666;">You can skip this if you want.</small>
+
+  <!-- Email -->
+  <label style="margin-top:20px;">Your Email *</label>
+  <input type="email" name="_replyto" required>
+  <small style="color:#666;">We'll only use your email to reply to your message.</small>
+
+  <!-- Message -->
+  <label style="margin-top:20px;">Your Message *</label>
+  <textarea name="message" required></textarea>
+  <small style="color:#666;">Tell us what's going on. Be as detailed as you like.</small>
+
+  <button type="submit">Send Message</button>
+
+  <p id="successMessage" 
+     style="display:none; margin-top:15px; color:green; font-weight:bold;">
+     Message sucessfully sent! Thank you.
+  </p>
+
+</form>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const successMsg = document.getElementById("successMessage");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // stop default page reload
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      form.reset();                // clear fields
+      successMsg.style.display = "block";   // show success message
+    }
+  });
+</script>
+</div>
+
+<footer>
+  &copy; 2025 MM3 Corporation. All Rights Reserved.
+</footer>
+
+</body>
+</html>
